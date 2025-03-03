@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: stg_powermatch_app__quiz_results
+    config:
+      event_time: created_at
+  - name: stg_powermatch_app__questions
+  - name: stg_powermatch_app__answers

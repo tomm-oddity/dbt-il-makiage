@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: int_powermatch_foundation_quiz_results_pivoted_to_quiz_results
+  - name: int_powermatch_foundation_quiz_results_pivoted_to_quiz_results
+    config:
+      event_time: created_at

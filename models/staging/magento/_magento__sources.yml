@@ -1,0 +1,22 @@
+version: 1
+
+sources:
+  - name: magento
+    schema: rds
+    tables:
+      - name: return_portal_entries
+        identifier: ilmakiage_return_return
+      - name: orders
+        identifier: sales_flat_order
+      - name: order_items
+        identifier: sales_flat_order_item
+      - name: credit_memos
+        identifier: sales_flat_creditmemo
+      - name: credit_memo_items
+        identifier: sales_flat_creditmemo_item
+      - name: order_addresses
+        identifier: sales_flat_order_address
+      - name: quiz_results
+        identifier: ilmakiage_quiz_testresult
+      - name: quiz_results_additional_data
+        identifier: ilmakiage_quiz_additional_data

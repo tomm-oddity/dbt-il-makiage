@@ -1,0 +1,23 @@
+[sqlfluff]
+templater = dbt
+dialect = redshift
+max_line_length = 120
+exclude_rules = ST06
+
+[sqlfluff:rules:references.keywords]
+ignore_words = attributes, properties
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.identifiers]
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.functions]
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.literals]
+capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.types]
+extended_capitalisation_policy = lower

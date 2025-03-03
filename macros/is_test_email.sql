@@ -1,0 +1,9 @@
+{% macro is_test_email(email_column) -%}
+    {%- set test_email_like_patterns = ["%oddity%", "%qatesting%", "%prodtest%", "%preprod%", "%devtest%", "test%", "%spoiledchild%", "scgeneralqa%", "scqaleo%", "%ilmakiage%", "%@ilm.com", "%ilmtest%", "%testilm%", "%ilmqatest%", "qa.%", "qa-%", "%qa.qa%", "%qatest%", "%iantest%", "%ghostinspector%", "qadyshliuk%", "qa_mudra%", "mudraqail%", "qazhenya9%", "qanuzhna%", "qamchuplak%", "qaluna%", "qakit%", "qa1zabolotna%", "qasli%", "testnastiaqa%", "testyvannia%", "qaalexandr4%", "qa.kharashchuk.ilm%", "qa.dharashchuk%", "dgaraschuk1%", "katerina.harashchuk%", "qa.koval.ilm%", "bogdana.ilnytska%", "boqail%", "koval.natalqa%", "kateryna.razghonova%", "30k06sh00%", "katy.romanchenko%", "kindrakevychnataliia%", "vikatester%", "maksymqatestign%", "qadariiatest%", "%kate.sakhno%", "testersofiav%", "testerviv2347%", "violanikoo%", "annaquizzes%", "liuda.makiage%", "vicky.tsaruk%", "vtrstilm%", "y.sergheeva%", "%zamiatinka%", "%zamiatina%", "qasniz%", "lidiiacm%", "natalia+test%", "qwerasdf5745%", "4b9y0s1edi%", "%harakirimail%", "taliquiz%", "noatest%", "mirandarmay%", "marielef%", "boozika%", "dimakn%", "nastiaag312g%", "aarushiiris%", "eacarlo%", "mdkhanin%", "tamartest%", "work.e.hammond%", "itaishayo%", "cohenkfir%", "kfirtests%", "odedoded%", "yasminbooth%", "royaron%", "inbalchakarov%", "inonamer%", "guyi%", "rowanftestorders%", "theresegao%", "miyusakurai%", "tashbmarekting%", "talmoskovich%", "%competitors%", "blakequizzes%", "marimo_salazar%", "17amandar%", "goldionnogo%", "jbnhooper%", "akarif%"] -%}
+    {%- set email = email_column.strip() -%}
+    {%- set like_statements = [] -%}
+    {%- for like_pattern in test_email_like_patterns -%}
+        {%- set _ = like_statements.append("lower({0}) like '{1}'".format(email, like_pattern)) -%}
+    {%- endfor -%}
+    {{ like_statements | join(' or ') }}
+{%- endmacro %}

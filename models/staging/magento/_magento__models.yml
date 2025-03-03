@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_magento__return_portal_entries
+  - name: stg_magento__orders
+  - name: stg_magento__order_items
+  - name: stg_magento__credit_memos
+  - name: stg_magento__credit_memo_items
+  - name: stg_magento__order_addresses
+  - name: stg_magento__quiz_results

@@ -1,0 +1,9 @@
+version: 1
+
+sources:
+  - name: powermatch_app
+    schema: mongodb_powermatch_app
+    tables:
+      - name: quiz_results
+      - name: questions
+      - name: answers

@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: orders
+    columns:
+      - name: entity_id
+        tests:
+          - not_null
+          - unique
+      - name: increment_id
+        tests:
+          - not_null
+          - unique
+      - name: created_at
+        tests:
+          - not_null
+      - name: updated_at
+        tests:
+          - not_null
+      - name: status
+      - name: grand_total
+      - name: shipping_amount
+      - name: shipping_address_id
+      - name: billing_address_id
+      - name: store_id
+      - name: order_type
+      - name: email_hash
+        description: "Hash of the (lowercase) customer email"
+      - name: is_test_email
+        description: "Whether the email is a test email"
+      - name: is_fake_order
+        description: "Whether the order is a fake order"
+      - name: is_non_customer_order
+        description: "Whether the order is not a real customer's order"
+  - name: order_items
+    columns:
+      - name: entity_id
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - not_null
+      - name: parent_item_id
+      - name: sku
+      - name: price
+      - name: created_at
+      - name: updated_at
+      - name: name
+      - name: reason
+        description: "Reason for the item being ordered"
+      - name: quantity_ordered
+  - name: return_portal_entries
+  - name: credit_memos
+  - name: credit_memo_items
+  - name: order_addresses
+  

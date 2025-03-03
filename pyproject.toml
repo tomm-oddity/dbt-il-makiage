@@ -1,0 +1,14 @@
+[project]
+name = "dbt-il-makiage"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-core>=1.9.2",
+    "dbt-redshift>=1.9.0",
+]
+
+[dependency-groups]
+dev = [
+    "sqlfluff>=3.3.1",
+    "sqlfluff-templater-dbt>=3.3.1",
+]
