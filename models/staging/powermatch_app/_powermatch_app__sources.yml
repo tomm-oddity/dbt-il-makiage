@@ -5,5 +5,9 @@ sources:
     schema: mongodb_powermatch_app
     tables:
       - name: quiz_results
+        config:
+          event_time: created_at
       - name: questions
       - name: answers
+      - name: user_images_stats
+        identifier: v81_ildms

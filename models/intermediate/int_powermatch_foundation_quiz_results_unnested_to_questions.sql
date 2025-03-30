@@ -12,10 +12,8 @@
 
 with
 
-foundation_quiz_results as (
+_quiz_results as (
     select * from {{ ref('stg_powermatch_app__quiz_results') }}
-    where
-        quiz_type = 'foundation-2.0'
 ),
 
 questions as (
@@ -24,6 +22,12 @@ questions as (
 
 answers as (
     select * from {{ ref('stg_powermatch_app__answers') }}
+),
+
+foundation_quiz_results as (
+    select * from _quiz_results
+    where
+        quiz_type = 'foundation-2.0'
 ),
 
 quiz_results_unnested_single_select_answers as (

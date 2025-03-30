@@ -54,4 +54,6 @@ models:
   - name: credit_memos
   - name: credit_memo_items
   - name: order_addresses
-  
+  - name: user_images_stats
+  - name: foundation_quiz_results
+          

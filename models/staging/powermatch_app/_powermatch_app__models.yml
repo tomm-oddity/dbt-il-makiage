@@ -6,3 +6,4 @@ models:
       event_time: created_at
   - name: stg_powermatch_app__questions
   - name: stg_powermatch_app__answers
+  - name: stg_powermatch_app__user_images_stats
